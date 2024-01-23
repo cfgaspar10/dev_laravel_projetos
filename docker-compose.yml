@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  webserver:
+    build: .
+    container_name: laravel_project
+    ports:
+      - 8090:80
+    volumes:
+      - ./app:/var/www/html
+      - ./scripts:/home/scripts
+      - ./apache/teste.local.conf:/etc/apache2/sites-enabled/teste.local.conf
+
+networks:
+  mynetwork:
+    driver: bridge
+ 
+ 
